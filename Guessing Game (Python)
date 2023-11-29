@@ -11,7 +11,7 @@ else:
     print("\nWhy did you run this program then?")
 
 while play_again:
-    level = input("Choose a level of difficulty (easy, normal, hard, insane):\n")
+    level = input("Choose a level of difficulty (easy, normal, hard, insane, impossible):\n")
     if level == "easy":
         max_number = 100
         tries = 15
@@ -24,6 +24,9 @@ while play_again:
     elif level == "insane":
         max_number = 200
         tries = 5
+    elif level == "impossible":
+        max_number = 500
+        tries = 10
     else:
         print("Invalid level of difficulty. Please choose again.")
         continue
