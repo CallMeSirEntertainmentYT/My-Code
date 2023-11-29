@@ -1,0 +1,52 @@
+import random
+
+print("Guessing Game")
+print("By: CallMeSirEntertainment\n")
+
+play_again_input = input("Would you like to play? (y/n) ")
+if play_again_input.lower() == "y":
+        play_again = True
+else:
+    play_again = False
+    print("\nWhy did you run this program then?")
+
+while play_again:
+    level = input("Choose a level of difficulty (easy, normal, hard, insane):\n")
+    if level == "easy":
+        max_number = 100
+        tries = 15
+    elif level == "normal":
+        max_number = 100
+        tries = 10
+    elif level == "hard":
+        max_number = 200
+        tries = 10
+    elif level == "insane":
+        max_number = 200
+        tries = 5
+    else:
+        print("Invalid level of difficulty. Please choose again.")
+        continue
+
+    print(f"\nI'm thinking of a number between 1 and {max_number}.")
+    print(f"You have {tries} tries to guess the number.")
+    number = random.randint(1, max_number)
+
+    for i in range(tries):
+        guess = int(input("\nEnter your guess: "))
+
+        if guess < number:
+            print("\nToo low. Try again.")
+        elif guess > number:
+            print("\nToo high. Try again.")
+        else:
+            print(f"\nCongratulations! You guessed the number in {i+1} tries.")
+            break
+
+    else:
+        print(f"\nSorry, you ran out of tries. \nThe number was {number}.")
+
+    play_again_input = input("\nWould you like to play again? (y/n) ")
+    if play_again_input.lower() == "n":
+        play_again = False
+        print("\nThank you for playing!")
