@@ -8,7 +8,7 @@ body:
     attributes:
       label: Version
       description: The version of the game you are using.
-      placeholder: Example: 1.3
+      placeholder: Must be exact!
     validations:
       required: true
   - type: textarea
