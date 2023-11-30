@@ -22,10 +22,10 @@ while play_again:
         max_number = 200
         tries = 10
     elif level == "insane":
-        max_number = 200
-        tries = 5
-    elif level == "impossible":
         max_number = 500
+        tries = 10
+    elif level == "impossible":
+        max_number = 1000
         tries = 10
     else:
         print("Invalid level of difficulty. Please choose again.")
