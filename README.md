@@ -1,5 +1,5 @@
-# Guessing-Game
-**This is a basic guessing game written in Python. More features will be added in the future.**
+# My code
+**This repository contains all the code I have ever made.**
 ## Ways to run:
 **1. [Programiz Compiler](https://www.programiz.com/python-programming/online-compiler/)**
 
