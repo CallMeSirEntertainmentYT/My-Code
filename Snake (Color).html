@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color: #F5F5DC;
+}
+#game-board {
+position: relative;
+height: 400px;
+width: 400px;
+border: 1px solid black;
+background-color: #ADFF2F;
+}
+.dot {
+position: absolute;
+height: 20px;
+width: 20px;
+background: #0000FF;
+}
+.food {
+position: absolute;
+height: 20px;
+width: 20px;
+background: #FF0000;
+}
+</style>
+</head>
+<body>
+<div id="game-board"></div>
+<script>
+var dotSize = 20;
+var direction = 'right';
+var snake = [{ top: 0, left: 0 }];
+var food = null;
+
+function updateGame() {
+var head = Object.assign({}, snake[0]); // copy head
+switch(direction) {
+case 'up': head.top -= dotSize; break;
+case 'down': head.top += dotSize; break;
+case 'left': head.left -= dotSize; break;
+case 'right': head.left += dotSize; break;
+}
+if (head.top < 0 || head.left < 0 || head.top >= 400 || head.left >= 400) return gameOver();
+for (var i = 0; i < snake.length; i++) {
+if (snake[i].top === head.top && snake[i].left === head.left) return gameOver();
+}
+snake.unshift(head);
+if (food && food.top === head.top && food.left === head.left) { // eat food
+food = null;
+} else { // remove tail
+snake.pop();
+}
+if (!food) { // new food
+food = { top: Math.floor(Math.random() * 20) * dotSize, left: Math.floor(Math.random() * 20) * dotSize };
+}
+drawGame();
+}
+
+function drawGame() {
+var gameBoard = document.getElementById('game-board');
+gameBoard.innerHTML = '';
+snake.forEach(function(dot) {
+var dotElem = document.createElement('div');
+dotElem.className = 'dot';
+dotElem.style.top = `${dot.top}px`;
+dotElem.style.left = `${dot.left}px`;
+gameBoard.appendChild(dotElem);
+});
+var foodElem = document.createElement('div');
+foodElem.className = 'food';
+foodElem.style.top = `${food.top}px`;
+foodElem.style.left = `${food.left}px`;
+gameBoard.appendChild(foodElem);
+}
+
+function gameOver() {
+alert('Game Over!');
+snake = [{ top: 0, left: 0 }];
+food = null;
+direction = 'right';
+}
+
+window.setInterval(updateGame, 200);
+
+window.onkeydown = function(e) {
+switch(e.key) {
+case 'ArrowUp': direction = 'up'; break;
+case 'ArrowDown': direction = 'down'; break;
+case 'ArrowLeft': direction = 'left'; break;
+case 'ArrowRight': direction = 'right'; break;
+}
+};
+</script>
+</body>
+</html>
