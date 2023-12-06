@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.row > div {
+border: 1px solid;
+width: 60px;
+height: 60px;
+line-height: 60px;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="board"></div>
+<button onclick="resetBoard()">Reset</button>
+
+<script>
+var board = [];
+var turn = 'X';
+
+function resetBoard() {
+board = ['','','','','','','','',''];
+turn = 'X';
+document.getElementById('board').innerHTML = '';
+drawBoard();
+}
+
+function drawBoard() {
+document.getElementById('board').innerHTML = ''; // Clear the old board
+for(var i = 0; i < 3; i++) {
+var row = document.createElement('div');
+row.className = 'row';
+row.style.display = 'flex';
+document.getElementById('board').appendChild(row);
+for(var j = 0; j < 3; j++) {
+var cell = document.createElement('div');
+cell.innerHTML = board[i*3+j];
+cell.addEventListener('click', (function(index) {
+return function() {
+if(board[index] == '') {
+board[index] = turn;
+turn = turn == 'X' ? 'O' : 'X';
+drawBoard();
+checkWin();
+}
+}
+})(i*3+j));
+row.appendChild(cell);
+}
+}
+}
+
+function checkWin() {
+var lines = [
+[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8],
+[0, 3, 6],
+[1, 4, 7],
+[2, 5, 8],
+[0, 4, 8],
+[2, 4, 6]
+];
+for(var i = 0; i < lines.length; i++) {
+if(board[lines[i][0]] != '' && board[lines[i][0]] == board[lines[i][1]] && board[lines[i][0]] == board[lines[i][2]]) {
+alert(board[lines[i][0]] + ' wins!');
+resetBoard();
+}
+}
+if(board.indexOf('') == -1) {
+alert('Draw!');
+resetBoard();
+}
+}
+
+resetBoard();
+</script>
+</body>
+</html>
