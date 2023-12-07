@@ -4,10 +4,10 @@ labels: ["bug"]
 
 body:
   - type: input
-    id: version
+    id: program
     attributes:
-      label: Version
-      description: The version of the game you are using.
+      label: Program
+      description: The name of the program that has the bug.
       placeholder: Must be exact!
     validations:
       required: true
@@ -25,6 +25,13 @@ body:
       description: How you came across the issue, and what exactly you did that caused the bug.
     validations:
       required: true
+    - type: textarea
+    id: errormessage
+    attributes:
+      label: Error message
+      description: Copy/paste the error message into this text box. (Only required for non-HTML programs)
+    validations:
+      required: false
   - type: checkboxes
     id: agreement
     attributes:
