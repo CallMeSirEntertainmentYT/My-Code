@@ -5,7 +5,7 @@
 
 **The Large-Projects repository holds large projects until they are ready to be released to the public.**
 
-**If you would like to make a suggestion for a project, contact me at callmesirentertainment@outlook.com.**
+**If you would like to make a suggestion for a project, contact me [here](mailto:callmesirentertainment@outlook.com?subject=Coding%20Project%20Suggestion).**
 ## Ways to run:
 ### Python:
 **1. [Programiz Compiler](https://www.programiz.com/python-programming/online-compiler/)**
