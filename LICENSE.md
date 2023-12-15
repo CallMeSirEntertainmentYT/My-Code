@@ -13,3 +13,4 @@
 
 **7. You may** use parts of my code with permission from me.
 ## Questions? Contact me [here](mailto:callmesirentertainment@outlook.com?subject=Legal%20Question).
+## Need permission? Contact me [here](mailto:callmesirentertainment@outlook.com?subject=Requesting%20Permission%20to%20Use%20Your%20Code)
