@@ -3,10 +3,17 @@ import random
 
 def generate_password():
     length = 0
-    while length < 5:
+    while length < 5 or length > 100:
         length = int(input("Enter the desired length of the password: "))
         if length < 5:
             print("Password length should be at least 5. Please try again.")
+        elif length > 100:
+            print("Warning: It is not advised to generate a password greater than 100 characters.")
+            proceed = input("Proceed anyway? (y/n): ")
+            if proceed.lower() != "y":
+                length = 0
+            else:
+                break
 
     # Define the character sets, excluding certain characters
     lowercase = string.ascii_lowercase
