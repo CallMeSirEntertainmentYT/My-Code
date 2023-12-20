@@ -69,8 +69,9 @@
 
 21. **Acceptance**: By using, modifying, or distributing the Software, the Licensee acknowledges that they have read this Agreement, understand it, and agree to be bound by its terms and conditions. If the Licensee does not agree to the terms and conditions of this Agreement, they are not authorized to use, modify, or distribute the Software.
 
-## Contact
-### For any questions, please contact me [here](mailto:callmesirentertainment@outlook.com?subject=Legal%20Question).
-**Do not expect an immediate response. (I have a life)**
-### To request permission, contact me [here](mailto:callmesirentertainment@outlook.com?subject=Permission%20Request)
-**Please include details about how and where you intend to use the code in your request.**
+## Contact Information
+### Questions
+Should you have any inquiries, please do not hesitate to reach out to me via this [email](mailto:callmesirentertainment@outlook.com?subject=Legal%20Question). Please be advised that due to other commitments, an immediate response may not be possible.
+
+### Permission Request
+If you wish to request permission for the use of my code, contact me through this [email](mailto:callmesirentertainment@outlook.com?subject=Permission%20Request). In your request, please provide detailed information regarding the intended use and location of the code. Your cooperation is greatly appreciated.
