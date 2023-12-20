@@ -1,0 +1,3 @@
+- [ ] I have made sure that the updated code works.
+- [ ] I have playtested the updated code for at least 5 minutes.
+- [ ] I have read the license.
