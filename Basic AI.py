@@ -28,7 +28,8 @@ def tell_joke():
              "Why don't skeletons fight each other? They don't have the guts!",
              "What do you call fake spaghetti? An impasta!",
              "Why couldn't the leopard play hide and seek? Because he was always spotted!",
-             "What do you call a snowman with a six-pack? An abdominal snowman!"]
+             "What do you call a snowman with a six-pack? An abdominal snowman!",
+             "What did the fish say to the sushi? Wassah b!"]
     print(random.choice(jokes))
 
 def trivia_game():
