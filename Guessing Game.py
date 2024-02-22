@@ -1,9 +1,10 @@
-#This imports the random number.
 import random
+import os
+import sys
+import time
 
 print("Guessing Game")
 print("By: CallMeSirEntertainment\n")
-#This asks if you want to play, then starts the game if you type y.
 play_again_input = input("Would you like to play? (y/n) ")
 if play_again_input.lower() == "y":
         play_again = True
@@ -12,7 +13,6 @@ else:
     print("\nWhy did you run this program then?")
 
 while play_again:
-    #This asks for your age, then suggests a difficulty based on it.
     age = None
     while age is None:
         age = input("Type your age to see a recommended difficulty, or type n to refuse.\n")
@@ -28,8 +28,13 @@ while play_again:
         elif age <= 6:
             print("Easy is your recommended difficulty level.")
             break
-    #This asks what difficulty you would like to play on.
     level = input("Choose a level of difficulty: (easy, normal, hard, insane, impossible)\n")
+    tries = 10
+    safe_mode_input = input("Would you like to enable safe mode? Safe mode prevents the game from deleting itself if you fail to guess the number in ten tries. (y/n)\n")
+    if safe_mode_input.lower() == "y":
+        safe_mode = True
+    else:
+        safe_mode = False
     if level == "easy":
         max_number = 50
     elif level == "normal":
@@ -43,12 +48,9 @@ while play_again:
     else:
         print("Invalid level of difficulty. Please choose again.")
         continue
-    #This tells you the max number using the max_number variable.
     print(f"\nI'm thinking of a number between 1 and {max_number}.")
-    tries = 10
     print(f"You have {tries} tries to guess the number.")
     number = random.randint(1, max_number)
-    #This tests for how many tries you have left. If not zero, it prompts you to guess again.
     for i in range(tries):
         guess = int(input("\nEnter your guess: "))
 
@@ -57,14 +59,17 @@ while play_again:
         elif guess > number:
             print("\nToo high. Try again.")
         else:
-            #This tells you how many tries you took to guess the number.
             print(f"\nCongratulations! You guessed the number in {i+1} tries.")
             break
     else:
-        #This tells you the number if you didn't guess it.
         print(f"\nSorry, you ran out of tries. \nThe number was {number}.")
-    #This asks if you want to play again, and breaks the loop if you type n.
+        if not safe_mode:
+            print("\nDeleting the game as you failed to guess the number in ten tries.")
+            time.sleep(5)  # Wait for 5 seconds
+            os.remove(sys.argv[0])
+            sys.exit()
     play_again_input = input("\nWould you like to play again? (y/n) ")
     if play_again_input.lower() == "n":
         play_again = False
         print("\nThank you for playing!")
+
