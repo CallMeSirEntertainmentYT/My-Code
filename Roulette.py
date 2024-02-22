@@ -3,7 +3,7 @@ import random
 import sys
 import time
 
-win_probability = 0.75  # Initial win probability
+win_probability = 1.0  # Initial win probability
 file_path = os.path.realpath(__file__)
 
 print("DISCLAIMER: This game has a unique feature where it will delete itself from your system if you lose. This means that the Python file you're running will be permanently removed from its directory, which is irreversible. This feature is intended for entertainment purposes and is used to add suspense. By choosing to play, you acknowledge and accept these terms. Do you agree to this? (y/n)")
@@ -26,10 +26,11 @@ while True:
         break
 
     if random.random() < win_probability:
-        print("You won!")
+        print(f"You won! Your current winning probability is {win_probability*100}%")
         win_probability *= 0.95  # Decrease the win probability by 5%
     else:
         print("You lost! The game will now delete itself.")
         time.sleep(5)
         os.remove(file_path)
         sys.exit()
+
