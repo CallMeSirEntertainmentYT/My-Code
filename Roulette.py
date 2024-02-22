@@ -25,12 +25,12 @@ while True:
         print("Exiting game.")
         break
 
+    print(f"Your current winning probability is {win_probability*100}%")
     if random.random() < win_probability:
-        print(f"You won! Your current winning probability is {win_probability*100}%")
+        print("You won!")
         win_probability *= 0.95  # Decrease the win probability by 5%
     else:
         print("You lost! The game will now delete itself.")
         time.sleep(5)
         os.remove(file_path)
         sys.exit()
-
