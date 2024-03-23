@@ -1,16 +1,16 @@
-import random
+import rand as rand
 import time
 import string
 vowels = string.ascii_lowercase[0:5]
 consonants = string.ascii_lowercase[5:]
 def choose_letter():
-  r = random.random()
+  r = rand.random()
   if r < 0.5:
-    return random.choice(vowels)
+    return rand.choice(vowels)
   else:
-    return random.choice(consonants)
+    return rand.choice(consonants)
 def make_word():
-  length = random.randint(3, 10)
+  length = rand.randint(3, 10)
   word = ""
   vowel_count = 0
   for i in range(length):
@@ -19,7 +19,7 @@ def make_word():
     if letter in vowels:
       vowel_count += 1
   if vowel_count == 0:
-    word = word[:-1] + random.choice(vowels)
+    word = word[:-1] + rand.choice(vowels)
   return word
 
 def make_definition(word):
