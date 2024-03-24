@@ -1,3 +1,5 @@
+import time
+
 made = float(input("How much gross money did you make? $"))
 lost = float(input("How much gross money did you lose? $"))
 taxrate = float(input("What percentage were you taxed? (In decimal form) "))
@@ -16,3 +18,4 @@ elif rounded_profit < 0:
     print(f"You lost ${-rounded_profit}.")
 else:
     print(f"You made no profit, nor did you lose money.")
+time.sleep(25)
