@@ -64,7 +64,6 @@ while play_again:
         max_number = 1000
     else:
         print("Invalid level of difficulty. Please choose again.")
-        continue
     special_numbers = [69, 420, 21]
     number = rand.randint(1, max_number)
     if number in special_numbers:
