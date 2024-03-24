@@ -78,8 +78,9 @@ while True:
         if power_level > 0:
             print("I'm sorry, but I can't do that. Remember that I am only a simple AI. Maybe try rephrasing?")
         if power_level <= 0:
-            print("I'm running low on power. Please wait while I recharge. Estimated time: 30 seconds.")
-            time.sleep(30)
+            recharge_time = random.randint(15,45)
+            print("I'm running low on power. Please wait while I recharge. Estimated time:",recharge_time, "seconds.")
+            time.sleep(recharge_time)
             power_level = 100
         else:
             print(f"Current power level: {power_level}%")
