@@ -1,3 +1,5 @@
+import time
+
 def string_to_binary(input_string):
     return ''.join(format(ord(i), '08b') for i in input_string)
 
@@ -9,16 +11,16 @@ while True:
     # Get user input
     user_input = input("Enter a string to convert to binary, or binary to convert to a string (or 'n' to quit): ")
 
-    # Check if the user wants to quit
     if user_input.lower() == 'n':
-        break
+        exit()
 
-    # Check if the input is binary
     if set(user_input) == {'0', '1'}:
         print("Input is binary. Converting to string...")
         print("String: ", binary_to_string(user_input))
+        time.sleep(60)
     else:
         print("Input is a string. Converting to binary...")
         print("Binary: ", string_to_binary(user_input))
+        time.sleep(60)
 
 print("Goodbye!")
