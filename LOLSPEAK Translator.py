@@ -50,4 +50,5 @@ while tranzlate == True:
     else:
         tranzlate = False
         print("\nTANKS 4 USIN!")
+        tiem.sleep(5)
         break
