@@ -1,4 +1,5 @@
 import random
+import time
 key = random.randint(0, 9999)
 def encrypt(message):
     encrypted = ""
@@ -16,10 +17,10 @@ if choice.lower() == "e":
     encrypted = encrypt(message)
     print("Encrypted message:", encrypted)
     print("Key:", key)
+    time.sleep(60)
 elif choice.lower() == "d":
     encrypted = input("Enter a message to decrypt: ")
     key = int(input("Enter the key: "))
     decrypted = decrypt(encrypted, key)
     print("Decrypted message:", decrypted)
-else:
-    print("Invalid choice. Please enter e or d.")
+    time.sleep(60)
